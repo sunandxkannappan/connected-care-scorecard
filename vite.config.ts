@@ -4,12 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const port = Number(process.env.PORT) || 5173;
-const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const pagesBase = repoName ? `/${repoName}/` : "/";
 export default defineConfig({
-  // Use the project base on GitHub Pages so built asset URLs resolve
-  // consistently from the published repository path.
-  base: process.env.VITE_BASE_PATH || pagesBase,
+  // GitHub Pages serves this repo from /connected-care-scorecard/.
+  base: process.env.VITE_BASE_PATH || "/connected-care-scorecard/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
