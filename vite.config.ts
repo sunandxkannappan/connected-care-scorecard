@@ -4,10 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const port = Number(process.env.PORT) || 5173;
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const pagesBase = repoName ? `/${repoName}/` : "/";
 export default defineConfig({
-  // Keep asset URLs relative by default so the site works from GitHub Pages
-  // project subpaths, but allow an explicit override when needed.
-  base: process.env.VITE_BASE_PATH || "./",
+  // Use the project base on GitHub Pages so built asset URLs resolve
+  // consistently from the published repository path.
+  base: process.env.VITE_BASE_PATH || pagesBase,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
