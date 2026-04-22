@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Building2, Scale, GraduationCap, Server, Users, Building, Smartphone, BarChart3, Linkedin } from "lucide-react";
 import { DIMENSIONS, MATURITY_LEVELS, SUB_DIMENSION_CRITERIA } from "@/data/scorecard";
 
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const DIMENSION_ICONS: Record<string, React.ElementType> = {
   governance: Building2,
   legislation: Scale,
@@ -16,7 +18,7 @@ const DIMENSION_ICONS: Record<string, React.ElementType> = {
 const AUTHORS = [
   {
     id: "kannappan",
-    photo: "/authors/kannappan.png",
+    photo: withBase("authors/kannappan.png"),
     name: "Sunand Kannappan",
     credentials: "BHSc",
     role: "Lead author",
@@ -26,7 +28,7 @@ const AUTHORS = [
   },
   {
     id: "hastings",
-    photo: "/authors/hastings.png",
+    photo: withBase("authors/hastings.png"),
     name: "Stephanie Hastings",
     credentials: "MSc PhD",
     role: "Co-author",
@@ -36,7 +38,7 @@ const AUTHORS = [
   },
   {
     id: "forster",
-    photo: "/authors/forster.png",
+    photo: withBase("authors/forster.png"),
     name: "Alan Forster",
     credentials: "MD MSc",
     role: "Co-author",
@@ -46,7 +48,7 @@ const AUTHORS = [
   },
   {
     id: "dean",
-    photo: "/authors/dean.png",
+    photo: withBase("authors/dean.png"),
     name: "Stafford Dean",
     credentials: "PhD",
     role: "Co-author",
@@ -66,7 +68,7 @@ const AUTHORS = [
   },
   {
     id: "hagens",
-    photo: "/authors/hagens.png",
+    photo: withBase("authors/hagens.png"),
     name: "Simon Hagens",
     credentials: "MBA",
     role: "Co-author",
@@ -76,7 +78,7 @@ const AUTHORS = [
   },
   {
     id: "gheorghiu",
-    photo: "/authors/gheorghiu.png",
+    photo: withBase("authors/gheorghiu.png"),
     name: "Bobby Gheorghiu",
     credentials: "MHSc",
     role: "Co-author",
@@ -86,7 +88,7 @@ const AUTHORS = [
   },
   {
     id: "affleck",
-    photo: "/authors/affleck.png",
+    photo: withBase("authors/affleck.png"),
     name: "Ewan Affleck",
     credentials: "CM MDCM",
     role: "Co-author",
@@ -96,7 +98,7 @@ const AUTHORS = [
   },
   {
     id: "snyman",
-    photo: "/authors/snyman.png",
+    photo: withBase("authors/snyman.png"),
     name: "Claire Snyman",
     credentials: "BSc",
     role: "Co-author",
@@ -106,7 +108,7 @@ const AUTHORS = [
   },
   {
     id: "adams",
-    photo: "/authors/adams.png",
+    photo: withBase("authors/adams.png"),
     name: "Owen Adams",
     credentials: "PhD",
     role: "Co-author",
@@ -116,7 +118,7 @@ const AUTHORS = [
   },
   {
     id: "williamson",
-    photo: "/authors/williamson.png",
+    photo: withBase("authors/williamson.png"),
     name: "Tyler Williamson",
     credentials: "PhD",
     role: "Co-author",
@@ -126,7 +128,7 @@ const AUTHORS = [
   },
   {
     id: "manns",
-    photo: "/authors/manns.png",
+    photo: withBase("authors/manns.png"),
     name: "Braden Manns",
     credentials: "MD MSc",
     role: "Corresponding author",

@@ -49,7 +49,7 @@ const KEY_LINKS = [
   }
 ];
 
-const SITE_URL = typeof window !== "undefined" ? window.location.origin : "https://connectedcarescorecard.ca";
+const SITE_URL = typeof window !== "undefined" ? window.location.href.split("#")[0] : "https://connectedcarescorecard.ca/";
 const SHARE_TEXT_SHORT = "How connected is your care? Explore Canada's first comprehensive EHR interoperability scorecard: 13 jurisdictions, 20 sub-dimensions.";
 
 function shareOnTwitter() {

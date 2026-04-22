@@ -4,10 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const port = Number(process.env.PORT) || 5173;
-const basePath = process.env.BASE_PATH || "/";
-
 export default defineConfig({
-  base: basePath,
+  // Keep asset URLs relative by default so the site works from GitHub Pages
+  // project subpaths, but allow an explicit override when needed.
+  base: process.env.VITE_BASE_PATH || "./",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
   server: {
