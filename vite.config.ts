@@ -5,8 +5,7 @@ import path from "path";
 
 const port = Number(process.env.PORT) || 5173;
 export default defineConfig({
-  // GitHub Pages serves this repo from /connected-care-scorecard/.
-  base: process.env.VITE_BASE_PATH || "/",
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
